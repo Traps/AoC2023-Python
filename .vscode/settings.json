@@ -1,3 +1,10 @@
 {
-    "github.copilot.enable": {"*":false}
+    "github.copilot.enable": {
+        "*": false
+    },
+    "python.testing.pytestArgs": [
+        "test"
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestEnabled": true
 }
