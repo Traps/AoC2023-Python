@@ -1,3 +1,4 @@
+from typing import Iterator
 import util
 import re
 
@@ -10,7 +11,7 @@ def evaluate_line(line:str) -> int:
     return v0 * 10 + v1
 
 
-def solve(_input: str) -> int:
+def digitize_input(_input:str) -> str:
     digits = ('one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine')
     
     number_indices = dict()
@@ -21,8 +22,12 @@ def solve(_input: str) -> int:
     for value, index in number_indices.items():
         for pos in index:
             _input[pos] = value
+            
+    return ''.join(_input)
 
-    return sum(evaluate_line(line) for line in ''.join(_input).splitlines())
+
+def solve(_input: str) -> int:
+    return sum(evaluate_line(line) for line in digitize_input(_input).splitlines())
 
 
 if __name__ == '__main__':
