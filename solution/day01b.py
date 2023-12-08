@@ -1,14 +1,10 @@
-from typing import Iterator
 import util
 import re
 
+from solution.day01a import evaluate_line
+
+
 DAY_NUM: int = 1
-
-def evaluate_line(line:str) -> int:
-    v0 = next(ord(c)-48 for c in line if c.isnumeric())
-    v1 = next(ord(c)-48 for c in reversed(line) if c.isnumeric())
-
-    return v0 * 10 + v1
 
 
 def digitize_input(_input:str) -> str:
