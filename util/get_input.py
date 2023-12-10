@@ -20,7 +20,7 @@ def get_sample(day:int, part:str='', option:int=0) -> str:
             )
         )
 
-    return samples[option].read_text()
+    return sorted(samples)[option].read_text()
 
 def get_challenge(day:int) -> str:
     challenge = next(CHALLENGE_DIR.glob(f'day{day:02d}*.txt'), None)
