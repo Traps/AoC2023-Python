@@ -1,11 +1,9 @@
 import itertools
-
 import math
 
 from typing import Iterator
 
 import util
-
 from solution.day08a import parse_network
 
 DAY_NUM: int = 8
@@ -16,8 +14,6 @@ def iter_path(turns:str, network:dict, start_node:str) -> Iterator[str]:
     for turn in itertools.cycle(turns):
         yield (current_node := network[(current_node, turn)])
     
-
-
 
 def solve(_input: str) -> int:
     turns, nodes = _input.split('\n\n')
